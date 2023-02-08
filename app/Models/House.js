@@ -23,7 +23,7 @@ export class House{
         <div class="d-flex justify-content-between">
         <button class="btn ms-1 btn-danger" type="button" 
         
-        onclick="app.carsController.removeCar('${this.id}')">Delete House!</button>
+        onclick="app.housesController.removeHouse('${this.id}')">Delete House!</button>
         <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn ms-1 btn-info" type="button" onclick="app.carsController.drawForm('${this.id}')">Edit House!</button>
         </div>
         </div>
@@ -33,5 +33,5 @@ export class House{
     `
   }
 
-  
+
 }

@@ -3,6 +3,11 @@ import { House } from "../Models/House.js"
 import { sandboxApi } from "./AxiosService.js"
 
 class HousesService{
+  async removeHouse(houseId) {
+    const res = await sandboxApi.delete('/houses/' + houseId)
+    console.log('removing house',res.data);
+    appState.houses = appState.houses.filter(house => house.id != houseId)
+  }
   async createHouse(formData) {
     const res = await sandboxApi.post('/houses',formData)
     console.log('[create house]', res.data);

@@ -41,4 +41,16 @@ export class HousesController{
     }
 
   }
+
+  async removeHouse(houseId){
+    try {
+      if(await Pop.confirm()){
+        await housesService.removeHouse(houseId)
+      }
+    } catch (error) {
+      console.error(error)
+      Pop.error(error.message)
+      
+    }
+  }
 }
