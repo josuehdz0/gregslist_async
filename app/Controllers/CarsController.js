@@ -23,7 +23,7 @@ function _drawCars() {
 
 export class CarsController {
   constructor () {
-    this.getCars()
+    // this.getCars()
     appState.on('cars', _drawCars)
   }
 

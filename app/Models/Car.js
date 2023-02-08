@@ -43,11 +43,11 @@ export class Car {
       editable = new Car({
         make: '',
         model: '',
-        year: 1990,
-        price: 100,
+        year: 0,
+        price: 0,
         imgUrl: '',
         description: ''
-      })
+      })  
     }
 
     return `
