@@ -47,7 +47,7 @@ export class Car {
         price: 0,
         imgUrl: '',
         description: ''
-      })  
+      })
     }
 
     return `

@@ -3,6 +3,13 @@ import { House } from "../Models/House.js"
 import { sandboxApi } from "./AxiosService.js"
 
 class HousesService{
+  async editHouse(formData, houseId) {
+    const res = await sandboxApi.put(`/houses/${houseId}`,formData)
+    console.log('edit house', res.data);
+    let oldHouseIndex = appState.houses.findIndex(h=> h.id == houseId)
+    appState.houses.splice(oldHouseIndex,1,new House(res.data))
+    appState.emit('houses')
+    }
   async removeHouse(houseId) {
     const res = await sandboxApi.delete('/houses/' + houseId)
     console.log('removing house',res.data);
